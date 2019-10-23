@@ -4,8 +4,8 @@
       <template slot="links">
         <sidebar-link to="/dashboard" name="Organizaciones" icon="ti-panel"/>
         <sidebar-link to="/stats" name="Perfil" icon="ti-user"/>
-        <sidebar-link to="/table-list" name="Crear" icon="ti-view-list-alt"/>
-        <sidebar-link to="/typography" name="Modificar" icon="ti-text"/>
+        <sidebar-link to="/table-list" name="Modificar" icon="ti-view-list-alt"/>
+        <sidebar-link to="/typography" name="Crear" icon="ti-text"/>
         <sidebar-link to="/icons" name="Eliminar" icon="ti-pencil-alt2"/>
         <sidebar-link to="/notifications" name="Notificaciones" icon="ti-bell"/>
       </template>
