@@ -22,7 +22,7 @@
       <div class="col-md-6 col-xl-3" v-for="(stats,index) in statsCards" :key="stats.title">
         <stats-card>
           <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
-           <img src="@/assets/img/4.png" alt="">
+            <img src="@/assets/img/4.png" alt />
           </div>
           <div class="numbers" slot="content">
             <p>{{stats.title}}</p>
@@ -32,11 +32,12 @@
             <i :class="stats.footerIcon"></i>
             {{stats.footerText}}
             <br />
-            <center><button
-              type="button" class="btn btn-primary bg-primary"
+            <button
+              type="button"
+              class="btn btn-success btn-sm btn-block"
               @click="temp(index)"
               data-target="#modalinfo"
-            >Más Info</button></center>
+            >Ver más</button>
           </div>
         </stats-card>
       </div>
@@ -44,10 +45,10 @@
 
     <!--INICIO DEL MODAL-->
 
-    <div class="modal fade " id="modalinfo" data-backdrop="false">
-      <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal fade" id="modalinfo" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header bg-dark text-white ">
+          <div class="modal-header bg-dark text-white">
             <h3 class="modal-title" id="exampleModalLongTitle">
               <center>
                 <i class="material-icons">assignment_ind</i>
@@ -80,7 +81,7 @@
             <div v-show="bandera==1">
               <div class="card" style="width: 100%">
                 <!-- para cuando se pongan la simagenes segun cada perfil v-bind:src="actor_temp.url_img"-->
-                <img src= "@/assets/img/4.png" class="card-img-top" />
+                <img src="@/assets/img/4.png" class="card-img-top" />
                 <div class="card-body">
                   <h5>
                     <h4>
@@ -107,75 +108,77 @@
                 </div>
               </div>
             </div>
-            <div v-show="bandera==2" >
+            <div v-show="bandera==2">
               <div class="card" style="width: 100%">
-              <h5>
-                <h4>
-                  <i class="material-icons">email</i>Email de la organización:
-                </h4>
-                {{actor_temp.email_institucion}}
-                <h4>
-                  <i class="material-icons">settings_phone</i>Telefono de la organización:
-                </h4>
-                {{actor_temp.telefono}}
-                <h4>
-                  <i class="material-icons">emoji_emotions</i>Nombre del representante:
-                </h4>
-                {{actor_temp.representante}}
-                <h4>
-                  <i class="material-icons">drafts</i>Email del representante:
-                </h4>
-                {{actor_temp.email_encargado}}
-                <h4>
-                  <i class="material-icons">perm_phone_msg</i>Telefono del representante:
-                </h4>
-                {{actor_temp.telefono_representante}}
-              </h5>
+                <h5>
+                  <h4>
+                    <i class="material-icons">email</i>Email de la organización:
+                  </h4>
+                  {{actor_temp.email_institucion}}
+                  <h4>
+                    <i class="material-icons">settings_phone</i>Telefono de la organización:
+                  </h4>
+                  {{actor_temp.telefono}}
+                  <h4>
+                    <i class="material-icons">emoji_emotions</i>Nombre del representante:
+                  </h4>
+                  {{actor_temp.representante}}
+                  <h4>
+                    <i class="material-icons">drafts</i>Email del representante:
+                  </h4>
+                  {{actor_temp.email_encargado}}
+                  <h4>
+                    <i class="material-icons">perm_phone_msg</i>Telefono del representante:
+                  </h4>
+                  {{actor_temp.telefono_representante}}
+                </h5>
               </div>
             </div>
 
-            <div v-show="bandera==3" >
+            <div v-show="bandera==3">
               <div class="card" style="width: 100%">
-              <h3>
-                <i class="material-icons">call_split</i>Areas de trabajo:
-              </h3>
+                <h3>
+                  <i class="material-icons">call_split</i>Areas de trabajo:
+                </h3>
 
-              <h4>
-                <span
-                  v-for="(tipo,index) in actor_temp.area_trabajo"
-                  :key="index"
-                  class="badge badge-pill badge-primary"
-                >{{tipo}}</span>
-              </h4>
+                <h4>
+                  <span
+                    v-for="(tipo,index) in actor_temp.area_trabajo"
+                    :key="index"
+                    class="badge badge-pill badge-primary"
+                  >{{tipo}}</span>
+                </h4>
 
-              <h3>
-                <i class="material-icons">stars</i>Logros:
-              </h3>
+                <h3>
+                  <i class="material-icons">stars</i>Logros:
+                </h3>
 
-              <h4>
-                <span
-                  v-for="(tipo,index) in actor_temp.logros"
-                  :key="index"
-                  class="badge badge-pill badge-success"
-                >{{tipo}}</span>
-              </h4>
+                <h4>
+                  <span
+                    v-for="(tipo,index) in actor_temp.logros"
+                    :key="index"
+                    class="badge badge-pill badge-success"
+                  >{{tipo}}</span>
+                </h4>
 
-              <h3>
-                <i class="material-icons">face</i>Socios:
-              </h3>
+                <h3>
+                  <i class="material-icons">face</i>Socios:
+                </h3>
 
-              <h4>
-                <span
-                  v-for="(tipo,index) in actor_temp.socios"
-                  :key="index"
-                  class="badge badge-pill badge-warning"
-                >{{tipo}}</span>
-              </h4>
-            </div>
+                <h4>
+                  <span
+                    v-for="(tipo,index) in actor_temp.socios"
+                    :key="index"
+                    class="badge badge-pill badge-warning"
+                  >{{tipo}}</span>
+                </h4>
+              </div>
             </div>
           </div>
-          <div class="modal-footer bg-primary text-white " data-dismiss="modal" >
-           <center><h5>SALIR</h5></center>
+          <div class="modal-footer bg-primary text-white" data-dismiss="modal">
+            <center>
+              <h5>SALIR</h5>
+            </center>
           </div>
         </div>
       </div>
@@ -226,7 +229,6 @@ export default {
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            console.log(doc.id, " => ", doc.data());
             this.actores.push({ id: doc.id, data: doc.data() });
             var n = Math.floor(Math.random() * 4);
             var color = "";
@@ -240,7 +242,7 @@ export default {
               color = "danger";
             }
             this.statsCards.push({
-              type: "danger",
+              type: color,
               icon: "ti-home",
               title: doc.data().ubicacion,
               value: doc.data().nombre,
