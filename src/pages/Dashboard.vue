@@ -22,7 +22,7 @@
       <div class="col-md-6 col-xl-3" v-for="(stats,index) in statsCards" :key="stats.title">
         <stats-card>
           <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
-            <img src="@/assets/img/4.png" alt />
+            <i :class="stats.icon"></i>
           </div>
           <div class="numbers" slot="content">
             <p>{{stats.title}}</p>
