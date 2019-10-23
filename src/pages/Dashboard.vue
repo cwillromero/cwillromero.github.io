@@ -52,40 +52,8 @@ export default {
    */
   data: () => ({
     filtro: "",
-    statsCards: [
-      {
-        type: "warning",
-        icon: "ti-home",
-        title: "Capacity",
-        value: "105GB",
-        footerText: "Updated now",
-        footerIcon: "ti-reload"
-      },
-      {
-        type: "success",
-        icon: "ti-wallet",
-        title: "Revenue",
-        value: "$1,345",
-        footerText: "Last day",
-        footerIcon: "ti-calendar"
-      },
-      {
-        type: "danger",
-        icon: "ti-pulse",
-        title: "Errors",
-        value: "23",
-        footerText: "In the last hour",
-        footerIcon: "ti-timer"
-      },
-      {
-        type: "info",
-        icon: "ti-twitter-alt",
-        title: "Followers",
-        value: "+45",
-        footerText: "Updated now",
-        footerIcon: "ti-reload"
-      }
-    ]
+    actores: [],
+    statsCards: []
   }),
   mounted: function() {
     this.getOrganizaciones();
@@ -94,7 +62,7 @@ export default {
     filtrarOrganizaciones: () => {
       console.log(this.filtro);
     },
-    getOrganizaciones: () => {
+    getOrganizaciones: function() {
       firebase
         .firestore()
         .collection("Actor")
@@ -102,6 +70,26 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             console.log(doc.id, " => ", doc.data());
+            this.actores.push({ id: doc.id, data: doc.data() });
+            var n = Math.floor(Math.random() * 4);
+            var color = "";
+            if (n === 0) {
+              color = "success";
+            } else if (n === 2) {
+              color = "warning";
+            } else if (n === 3) {
+              color = "info";
+            } else {
+              color = "danger";
+            }
+            this.statsCards.push({
+              type: "danger",
+              icon: "ti-home",
+              title: doc.data().ubicacion,
+              value: doc.data().nombre,
+              footerText: doc.data().descripcion,
+              footerIcon: "ti-eye"
+            });
           });
         })
         .catch(function(error) {
