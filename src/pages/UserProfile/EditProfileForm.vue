@@ -5,23 +5,23 @@
         <div class="row">
           <div class="col-md-5">
             <fg-input type="text"
-                      label="Company"
+                      label="Nombre del Actor"
                       :disabled="true"
-                      placeholder="Paper dashboard"
+                      placeholder="Nombre"
                       v-model="user.company">
             </fg-input>
           </div>
           <div class="col-md-3">
 
             <fg-input type="text"
-                      label="Username"
-                      placeholder="Username"
+                      label="Email de la Organización"
+                      placeholder="Email"
                       v-model="user.username">
             </fg-input>
           </div>
           <div class="col-md-4">
             <fg-input type="email"
-                      label="Username"
+                      label="Email del encargado"
                       placeholder="Email"
                       v-model="user.email">
             </fg-input>
@@ -31,14 +31,14 @@
         <div class="row">
           <div class="col-md-6">
             <fg-input type="text"
-                      label="First Name"
-                      placeholder="First Name"
+                      label="Nombre del encargado"
+                      placeholder="Encargado"
                       v-model="user.firstName">
             </fg-input>
           </div>
           <div class="col-md-6">
             <fg-input type="text"
-                      label="Last Name"
+                      label="Telefono fijo"
                       placeholder="Last Name"
                       v-model="user.lastName">
             </fg-input>
@@ -48,14 +48,14 @@
         <div class="row">
           <div class="col-md-12">
             <fg-input type="text"
-                      label="Address"
+                      label="Ubicación"
                       placeholder="Home Address"
                       v-model="user.address">
             </fg-input>
           </div>
         </div>
 
-        <div class="row">
+      <!--  <div class="row">
           <div class="col-md-4">
             <fg-input type="text"
                       label="City"
@@ -77,12 +77,12 @@
                       v-model="user.postalCode">
             </fg-input>
           </div>
-        </div>
+        </div>-->
 
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label>About Me</label>
+              <label>Descripción</label>
               <textarea rows="5" class="form-control border-input"
                         placeholder="Here can be your description"
                         v-model="user.aboutMe">
@@ -95,7 +95,7 @@
           <p-button type="info"
                     round
                     @click.native.prevent="updateProfile">
-            Update Profile
+           Actualizar
           </p-button>
         </div>
         <div class="clearfix"></div>
@@ -108,15 +108,15 @@ export default {
   data() {
     return {
       user: {
-        company: "Paper Dashboard",
-        username: "michael23",
-        email: "",
-        firstName: "Chet",
-        lastName: "Faker",
-        address: "Melbourne, Australia",
+        company: "Universidad Tecnologica Centroamericana",
+        username: "UNITEC",
+        email: "Unitec@unitec.edu",
+        firstName: "Unitec@unitec.edu",
+        lastName: "22452245",
+        address: "Tegucigalpa MDC, Res.Honduras",
         city: "Melbourne",
         postalCode: "",
-        aboutMe: `We must accept finite disappointment, but hold on to infinite hope.`
+        aboutMe: `UNITEC es una institución educativa de caracter privado que se caracteriza por se runa empresa socialmente Repsonsable`
       }
     };
   },

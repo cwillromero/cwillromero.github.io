@@ -32,22 +32,22 @@
 export default {
   data() {
     return {
-      title: "Team members",
+      title: "Colaboradores / Socios",
       members: [
         {
-          image: require("@/assets/img/faces/face-0.jpg"),
-          name: "Dj Khaled",
-          status: "Offline"
+          image: require("@/assets/img/4.png"),
+          name: "SENAEH",
+          //status: "Offline"
         },
         {
-          image: require("@/assets/img/faces/face-1.jpg"),
-          name: "Creative Tim",
-          status: "Available"
+          image: require("@/assets/img/5.png"),
+          name: "RE.TE.org",
+          //status: "Available"
         },
         {
-          image: require("@/assets/img/faces/face-1.jpg"),
-          name: "Flume",
-          status: "Busy"
+          image: require("@/assets/img/7.jpg"),
+          name: "CDE",
+          //status: "Busy"
         }
       ]
     };
