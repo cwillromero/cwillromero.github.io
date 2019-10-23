@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--Drop para escoger tipo de Organización-->
-    <p>Filtrar por:</p>
+    <h1>Filtrar por:</h1>
     <div class="dropdown">
       <button
         class="btn btn-secondary dropdown-toggle"
@@ -19,7 +19,7 @@
     <!--Stats cards-->
     <br />
     <div class="row">
-      <div class="col-md-6 col-xl-3" v-for="(stats,index) in statsCards" :key="stats.title">
+      <div class="col-md-6 col-xl-3" v-for="(stats,index) in statsCards" :key="stats.title" >
         <stats-card>
           <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
             <i :class="stats.icon"></i>
