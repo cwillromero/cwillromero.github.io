@@ -1,6 +1,7 @@
 <template>
-    <div class="row">
-      <div class="col-12">
+  <div class="row">
+    <add-organizacion />
+    <!--div class="col-12">
         <card :title="table1.title" :subTitle="table1.subTitle">
           <div slot="raw-content" class="table-responsive">
             <paper-table :data="table1.data" :columns="table1.columns">
@@ -19,13 +20,13 @@
             </paper-table>
           </div>
         </card>
-      </div>
-
-    </div>
+    </div-->
+  </div>
 </template>
 <script>
 import { PaperTable } from "@/components";
 const tableColumns = ["Id", "Name", "Salary", "Country", "City"];
+import {AddOrganizacion} from "@/components/index";
 const tableData = [
   {
     id: 1,
@@ -66,7 +67,8 @@ const tableData = [
 
 export default {
   components: {
-    PaperTable
+    PaperTable,
+    AddOrganizacion
   },
   data() {
     return {

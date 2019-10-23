@@ -1,7 +1,6 @@
 <template>
   <div class="row">
-    <add-organizacion/>
-    <div class="col-md-12">
+    <!--div class="col-md-12">
       <card>
         <template slot="header">
           <h4 class="card-title">Paper Dashboard Headings</h4>
@@ -63,7 +62,7 @@
             <!--
                there are also "text-info", "text-success", "text-warning", "text-danger" clases for the text
             -->
-            <p class="category">Coloured Text</p>
+            <!--p class="category">Coloured Text</p>
             <p
               class="text-primary"
             >Text Primary - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.</p>
@@ -163,7 +162,7 @@
           </div>
         </div>
       </card>
-    </div>
+    </div-->
   </div>
 </template>
 <script>
