@@ -30,7 +30,9 @@
           </div>
           <div class="stats" slot="footer">
             <i :class="stats.footerIcon"></i>
-            {{stats.footerText}}
+            {{stats.footerText}} 
+            <br>
+            <button type="button" class="btn btn-success btn-sm btn-block">Ver más</button>
           </div>
         </stats-card>
       </div>
@@ -69,7 +71,6 @@ export default {
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            console.log(doc.id, " => ", doc.data());
             this.actores.push({ id: doc.id, data: doc.data() });
             var n = Math.floor(Math.random() * 4);
             var color = "";
@@ -83,7 +84,7 @@ export default {
               color = "danger";
             }
             this.statsCards.push({
-              type: "danger",
+              type: color,
               icon: "ti-home",
               title: doc.data().ubicacion,
               value: doc.data().nombre,
