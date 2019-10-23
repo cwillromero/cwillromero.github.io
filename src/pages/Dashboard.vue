@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <!--INICIO DEL MODAL-->
+    <!--INICIO DEL MODAL L-->
 
     <div class="modal fade" id="modalinfo" data-backdrop="false">
       <div class="modal-dialog modal-dialog-centered" role="document">
