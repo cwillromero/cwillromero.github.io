@@ -3,9 +3,13 @@
     <!--Drop para escoger tipo de Organización-->
     <p>Filtrar por:</p>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Tipo de Organización
-      </button>
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >Tipo de Organización</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Gubernamental</a>
         <a class="dropdown-item" href="#">No Gubernamental</a>
@@ -13,7 +17,7 @@
       </div>
     </div>
     <!--Stats cards-->
-    <br>
+    <br />
     <div class="row">
       <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
         <stats-card>
@@ -25,7 +29,8 @@
             {{stats.value}}
           </div>
           <div class="stats" slot="footer">
-            <i :class="stats.footerIcon"></i> {{stats.footerText}}
+            <i :class="stats.footerIcon"></i>
+            {{stats.footerText}}
           </div>
         </stats-card>
       </div>
@@ -34,7 +39,9 @@
 </template>
 <script>
 import { StatsCard, ChartCard } from "@/components/index";
-import Chartist from 'chartist';
+import Chartist from "chartist";
+import { firebase, firestore } from "../firebase";
+
 export default {
   components: {
     StatsCard,
@@ -44,41 +51,64 @@ export default {
    * Chart data used to render stats, charts. Should be replaced with server data
    */
   data: () => ({
-      statsCards: [
-        {
-          type: "warning",
-          icon: "ti-home",
-          title: "Capacity",
-          value: "105GB",
-          footerText: "Updated now",
-          footerIcon: "ti-reload"
-        },
-        {
-          type: "success",
-          icon: "ti-wallet",
-          title: "Revenue",
-          value: "$1,345",
-          footerText: "Last day",
-          footerIcon: "ti-calendar"
-        },
-        {
-          type: "danger",
-          icon: "ti-pulse",
-          title: "Errors",
-          value: "23",
-          footerText: "In the last hour",
-          footerIcon: "ti-timer"
-        },
-        {
-          type: "info",
-          icon: "ti-twitter-alt",
-          title: "Followers",
-          value: "+45",
-          footerText: "Updated now",
-          footerIcon: "ti-reload"
-        }
-      ],
-  })
+    filtro: "",
+    statsCards: [
+      {
+        type: "warning",
+        icon: "ti-home",
+        title: "Capacity",
+        value: "105GB",
+        footerText: "Updated now",
+        footerIcon: "ti-reload"
+      },
+      {
+        type: "success",
+        icon: "ti-wallet",
+        title: "Revenue",
+        value: "$1,345",
+        footerText: "Last day",
+        footerIcon: "ti-calendar"
+      },
+      {
+        type: "danger",
+        icon: "ti-pulse",
+        title: "Errors",
+        value: "23",
+        footerText: "In the last hour",
+        footerIcon: "ti-timer"
+      },
+      {
+        type: "info",
+        icon: "ti-twitter-alt",
+        title: "Followers",
+        value: "+45",
+        footerText: "Updated now",
+        footerIcon: "ti-reload"
+      }
+    ]
+  }),
+  mounted: function() {
+    this.getOrganizaciones();
+  },
+  methods: {
+    filtrarOrganizaciones: () => {
+      console.log(this.filtro);
+    },
+    getOrganizaciones: () => {
+      firebase
+        .firestore()
+        .collection("Actor")
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            console.log(doc.id, " => ", doc.data());
+          });
+        })
+        .catch(function(error) {
+          console.log("Error getting Actores: ", error);
+        });
+    }
+  }
 };
 </script>
 <style>
