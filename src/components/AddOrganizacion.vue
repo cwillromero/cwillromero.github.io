@@ -263,9 +263,36 @@ export default {
         })
         .then(docRef => {
           console.log("Document written with ID: ", docRef.id);
+          alert("Organización creada correctamente! :)");
+          this.email_encargado= "";
+          this.representante= "";
+          this.telefono= 0;
+          this.email_institucion ="";
+          this.ubicacion= "";
+          this.nombre= "";
+          this.descripcion= "";
+          this.telefono_representante= 0;
+          this.Tipo1= false;
+          this.Tipo2= false;
+          this.Tipo3= false;
+          this.Tipo4= false;
+          this.Tipo5= false;
+          this.Tipo6= false;
+          this.Tipo7= false;
+          this.Area1= false;
+          this.Area2= false;
+          this.Area3= false;
+          this.Area4= false;
+          this.Area5= false;
+          this.Area6= false;
+          this.socios= "";
+          this.proyectos= "";
+          this.logros= "";
+          this.funciones= "";
         })
         .catch(error => {
           console.error("Error adding document: ", error);
+          alert("Error creando Organización. :(");
         });
     }
   }
