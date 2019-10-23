@@ -1,7 +1,19 @@
 <template>
   <div>
-
+    <!--Drop para escoger tipo de Organización-->
+    <p>Filtrar por:</p>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Tipo de Organización
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Gubernamental</a>
+        <a class="dropdown-item" href="#">No Gubernamental</a>
+        <a class="dropdown-item" href="#">Ambos</a>
+      </div>
+    </div>
     <!--Stats cards-->
+    <br>
     <div class="row">
       <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
         <stats-card>
@@ -35,7 +47,7 @@ export default {
       statsCards: [
         {
           type: "warning",
-          icon: "ti-server",
+          icon: "ti-home",
           title: "Capacity",
           value: "105GB",
           footerText: "Updated now",
