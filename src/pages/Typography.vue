@@ -6,7 +6,6 @@
 </template>
 <script>
 import {AddOrganizacion} from "@/components/index";
-
 export default {
   components: {
     AddOrganizacion
